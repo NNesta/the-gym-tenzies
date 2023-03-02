@@ -39,10 +39,10 @@ function App() {
     setWin(dice.every((die) => die.clicked === true));
   }, [dice]);
   return (
-    <main className=" mx-auto my-12 min-h-[517px] bg-white flex items-center justify-center scale-[1.5]">
+    <main className=" mx-auto my-12 overflow-x-hidden min-h-[517px] bg-white flex items-center justify-center scale-[1.5]">
       <div className="w-[360px] min-h-[379px] flex items-center justify-center bg-[#0B2434]">
         {win && <Confetti width={width} height={height} />}
-        <div className="max-w-[320px] min-h-[320px] bg-[#F5F5F5] flex flex-col justify-center gap-4 items-center">
+        <div className="max-w-[320px] min-h-[320px] bg-[#F5F5F5] rounded-[10px] flex flex-col justify-center gap-4 items-center">
           <h1 className="text-[25.6px] leading-[29.93px] tracking-[-3%] font-bold text-center">
             Tenzies
           </h1>
@@ -56,7 +56,7 @@ function App() {
                 onClick={() => handleClick(die, i)}
                 className={`w-[35.84px] ${
                   die.clicked ? "bg-[#59E391]" : "bg-white"
-                }  aspect-square text-[20.59px] leading-[24.07px] shadow-lg text-center flex items-center justify-center`}
+                }  aspect-square text-[20.59px] leading-[24.07px] shadow-lg text-center flex items-center justify-center rounded-[4px]`}
               >
                 {die.value}
               </button>
