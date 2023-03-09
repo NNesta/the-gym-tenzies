@@ -30,13 +30,14 @@ function App() {
   const handleClick = (die, i) => {
     setDice((prevDice) => {
       const newDice = [...prevDice];
-      console.log("newDice", newDice, !die.clicked);
       newDice[i].clicked = !die.clicked;
       return newDice;
     });
   };
   useEffect(() => {
-    setWin(dice.every((die) => die.clicked === true));
+    setWin(
+      dice.every((die) => die.clicked === true && die.value === dice[0].value)
+    );
   }, [dice]);
   return (
     <main className=" mx-auto my-12 overflow-x-hidden min-h-[517px] bg-white flex items-center justify-center scale-[1.5]">
